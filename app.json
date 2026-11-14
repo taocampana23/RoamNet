@@ -1,0 +1,19 @@
+{
+  "expo": {
+    "name": "RoamNet",
+    "slug": "roamnet",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "scheme": "roamnet",
+    "splash": { "backgroundColor": "#172D3D" },
+    "ios": { "supportsTablet": true },
+    "android": {
+      "adaptiveIcon": { "backgroundColor": "#172D3D" },
+      "package": "com.roamnet.app"
+    },
+    "web": { "bundler": "metro" },
+    "plugins": ["expo-router"],
+    "experiments": { "typedRoutes": false }
+  }
+}
