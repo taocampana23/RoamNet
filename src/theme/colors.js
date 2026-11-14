@@ -1,0 +1,15 @@
+export const colors = {
+  navy: '#172D3D',
+  teal: '#1BAA91',
+  tealLight: '#E6F5F1',
+  tealPale: '#D3EDE6',
+  background: '#F5F5F0',
+  text: '#172D3D',
+  muted: '#52636B',
+  border: '#DDE3E1',
+  white: '#FFFFFF',
+  green: '#21865B',
+  red: '#C43D3D',
+  soft: '#F1F3F2',
+  map: '#E7EEE9',
+};
