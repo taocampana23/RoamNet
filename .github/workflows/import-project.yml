@@ -1,0 +1,24 @@
+name: Import Expo project files
+on:
+  push:
+    branches: [main]
+    paths:
+      - "RoamNet-expo-project.zip"
+permissions:
+  contents: write
+jobs:
+  import-project:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Extract Expo project into repository root
+        run: |
+          unzip -o RoamNet-expo-project.zip
+          cp -a RoamNet/. .
+          rm -rf RoamNet RoamNet-expo-project.zip
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Add RoamNet Expo application source"
+          git push
