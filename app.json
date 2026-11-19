@@ -1,17 +1,14 @@
 {
   "expo": {
-    "name": "RoamNet",
-    "slug": "roamnet",
+    "name": "MusicConnect Rwanda",
+    "slug": "musicconnect-rwanda",
     "version": "1.0.0",
     "orientation": "portrait",
     "userInterfaceStyle": "light",
-    "scheme": "roamnet",
-    "splash": { "backgroundColor": "#172D3D" },
+    "scheme": "musicconnectrwanda",
+    "splash": { "backgroundColor": "#F7F5F0" },
     "ios": { "supportsTablet": true },
-    "android": {
-      "adaptiveIcon": { "backgroundColor": "#172D3D" },
-      "package": "com.roamnet.app"
-    },
+    "android": { "adaptiveIcon": { "backgroundColor": "#F2A23A" }, "package": "rw.musicconnect.app" },
     "web": { "bundler": "metro" },
     "plugins": ["expo-router"],
     "experiments": { "typedRoutes": false }
