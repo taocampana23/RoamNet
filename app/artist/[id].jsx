@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { router, useLocalSearchParams } from 'expo-router';
 import { ArtistAvatar, BottomNav, DemoFootnote, Page, ReleaseCard, SectionTitle } from '../../src/components/ui';
@@ -9,6 +9,7 @@ export default function ArtistScreen() {
   const { id } = useLocalSearchParams();
   const artist = useMemo(() => ARTISTS.find((a) => a.id === id) || ARTISTS[0], [id]);
   const releases = RELEASES.filter((r) => r.artistId === artist.id);
+  const [following, setFollowing] = useState(false);
   return (
     <View style={styles.root}>
       <Page contentStyle={styles.page}>
@@ -18,7 +19,7 @@ export default function ArtistScreen() {
           <Text style={styles.name}>{artist.name}</Text>
           <Text style={styles.genre}>{artist.genre}</Text>
           <Text style={styles.bio}>{artist.bio}</Text>
-          <Pressable style={styles.follow} onPress={() => {}}><Text style={styles.followText}>+ Follow artist</Text></Pressable>
+          <Pressable style={styles.follow} onPress={() => setFollowing((value) => !value)}><Text style={styles.followText}>{following ? '✓ Following' : '+ Follow artist'}</Text></Pressable>
         </View>
         <SectionTitle title="Music and releases" />
         <View style={styles.releases}>{releases.map((r) => <ReleaseCard key={r.id} release={r} />)}</View>
