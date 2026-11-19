@@ -1,74 +1,67 @@
-# RoamNet — Expo / React Native app
+# MusicConnect Rwanda
 
-RoamNet is a mobile app prototype based on the eight-screen HTML design supplied for this project.
+A React Native / Expo mobile application prototype for discovering Rwandan musicians, music releases, performances and cultural events.
 
-## Screens
+## Screens and features
 
-1. Splash
-2. Welcome
-3. Sign in
-4. Create account
-5. Home
-6. Explore map
-7. Hotspot details
-8. Connection status
+- Home / landing page with featured musicians, fresh sounds and upcoming event cards.
+- Artist discovery with search and genre filters.
+- Artist detail pages with artist information and linked music listings.
+- Music release detail pages.
+- Events page with save/unsave interactions.
+- Profile tab placeholder.
+- Bottom navigation between Home, Artists, Events and Profile.
 
-## Design system
+## Folder structure
 
-- Navy: `#172D3D`
-- Teal: `#1BAA91`
-- Background: `#F5F5F0`
-- Muted text: `#52636B`
-- Borders: `#DDE3E1`
-
-## Open the project in VS Code
-
-Open a terminal (PowerShell, Windows Terminal, or the VS Code terminal) and run:
-
-```bash
-git clone https://github.com/taocampana23/RoamNet.git
-cd RoamNet
-code .
+```text
+app/
+  _layout.jsx
+  index.jsx
+  explore.jsx
+  events.jsx
+  profile.jsx
+  artist/[id].jsx
+  release/[id].jsx
+src/
+  components/ui.jsx
+  data/music.js
+  screens/landingpage.json
+  screens/secondpage.json
+  style/globalstyles.json
+  theme/colors.js
 ```
 
-If `code .` is not recognized, open VS Code and use **File → Open Folder**, then select the cloned `RoamNet` folder.
+The JSON files in `src/screens` provide screen text/configuration. The global design tokens are stored in `src/style/globalstyles.json` and imported by `src/theme/colors.js`.
 
-Install dependencies and start Expo:
+## Run in VS Code
+
+1. Open the project folder in VS Code.
+2. Open Terminal → New Terminal.
+3. Install dependencies:
 
 ```bash
 npm install
+```
+
+4. Start Expo:
+
+```bash
 npx expo start
 ```
 
-Press `w` to open the web preview, or scan the QR code with Expo Go on your Android phone. Use Node.js 22 LTS or a newer compatible release.
+For an Android emulator that is detected by ADB, you can use:
 
-## Prototype functionality
+```bash
+npx expo start --android
+```
 
-- Navigation between all eight screens.
-- Splash screen moves to the welcome screen.
-- Welcome screen links to account creation and sign-in.
-- Sign-in and account creation validate required fields and create an in-memory demo profile.
-- Home search filters the included sample hotspot list.
-- Explore switches between an illustrative map view and list view, selects hotspots, and opens hotspot details.
-- Hotspot details opens Google Maps directions and explains provider eligibility.
-- Connection status shows a simulated session timer and disconnect action.
+For BlueStacks, open Expo Go inside BlueStacks and connect to the development URL shown by Expo. The PC and emulator must be able to reach the Metro development server. If LAN discovery does not work, try starting Expo with `npx expo start --tunnel`.
 
-## Important limitations
+Expo SDK 57 requires Node.js 22.13.x or newer. Check your version with `node -v`.
 
-This is a **front-end prototype**, not a production Wi-Fi service.
+## Content accuracy
 
-- Hotspot records, distances, and availability are demonstration data; they are not verified live coverage.
-- The Explore map is an illustrative map-style view, not a live map SDK.
-- The demo account exists only in app memory. No real authentication, persistent database, password recovery, or secure account storage is connected.
-- The connection screen simulates a session. It does not connect the phone to a Wi-Fi network, change Wi-Fi settings, or authenticate with a provider.
-- Live hotspot discovery and Wi-Fi access require approved data/API access and integration from participating network operators.
+The artist directory contains example public artist names and brief descriptive summaries. The sample release titles, covers and event names are prototype placeholders, not verified official releases or confirmed upcoming events. Event dates, venue details, official music links, artist permissions and accurate release credits must be verified and replaced before public launch.
 
-## Next production integrations
-
-1. Select and configure a secure authentication backend (for example, Supabase Auth or Firebase Authentication).
-2. Add permission-based device location and a live map SDK.
-3. Connect an approved hotspot directory/API with provider-verified availability.
-4. Implement a provider-authorized Wi-Fi onboarding/authentication flow.
-5. Add server-side support reporting, privacy terms, and monitoring.
-
-No API keys, passwords, or service secrets are included. Keep private credentials in local environment configuration and never commit them to Git.
+This version is a front-end prototype. It does not yet include a backend, artist accounts, ticket purchases, real-time event listings, licensed music playback, or persistent user profiles.
