@@ -1,0 +1,9 @@
+{
+  "screen": "secondpage",
+  "title": "Explore music",
+  "subtitle": "Find artists and sounds from across Rwanda.",
+  "categories": ["All", "Afrobeats", "R&B", "Hip-hop", "Gospel", "Amapiano"],
+  "artistsTitle": "Rwandan artists",
+  "releasesTitle": "Latest releases",
+  "eventsTitle": "Live in Rwanda"
+}
