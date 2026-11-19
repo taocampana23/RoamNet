@@ -8,7 +8,10 @@
     "scheme": "musicconnectrwanda",
     "splash": { "backgroundColor": "#F7F5F0" },
     "ios": { "supportsTablet": true },
-    "android": { "adaptiveIcon": { "backgroundColor": "#F2A23A" }, "package": "rw.musicconnect.app" },
+    "android": {
+      "adaptiveIcon": { "backgroundColor": "#F2A23A" },
+      "package": "rw.musicconnect.app"
+    },
     "web": { "bundler": "metro" },
     "plugins": ["expo-router"],
     "experiments": { "typedRoutes": false }
